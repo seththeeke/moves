@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  </head>
+  <style>
+      body{
+          font-family: "Montserrat", "Times New Roman";
+          width: auto;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          margin: 0;
+      }
+
+      .overview-wrapper{
+          text-align: center;
+          display: block;
+      }
+
+      /* Mobile */
+      @media only screen 
+      and (min-device-width : 320px) 
+      and (max-device-width : 667px)
+      and (orientation : portrait) {
+        body{
+          min-height: 1800px;
+          background-size: cover;
+          background-color: black;
+          color: #FFF59D;
+        }
+
+        .bottom {
+          font-size: 20px;
+          position: absolute;
+          bottom: 10px;
+          left: 350px;
+        }
+
+        .map {
+          width: 980px;
+          height: 800px;
+        }
+
+        tr {
+          border-bottom: 1px solid white;
+          display: inline-block;
+          width: 90%;
+          background-color: black;
+          font-size: 40px;
+          padding-left: 10px;
+          margin-top: 10px;
+          text-align: left;
+        }
+
+        td {
+          width: 20%;
+          padding-left: 15px;
+          padding-top: 10px;
+        }
+
+        td:nth-child(1) {
+          padding-left: 0;
+        }
+
+        td:nth-child(5) {
+          padding-left: 50px;
+        }
+
+        .ride-table {
+          text-align: center;
+        }
+
+        button {
+          color: #9575CD;
+        }
+
+        .primary-button {
+          padding-top: 15px;
+          padding-left: 30px;
+          font-size: 40px;
+        }
+
+        .request-button {
+          font-size: 30px;
+          border-radius: 10px;
+          background-color: #9575CD;
+          color: white;
+        }
+      }
+
+  </style>
+  <body>
+  <script type="text/javascript" src="javascripts/index.js"></script>
+  <div class="main-block">
+      <div class="overview-wrapper">
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49162.3986212891!2d-79.97848479359097!3d39.635085742545456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88357b684185333d%3A0x78bee909ab8d43e4!2sMorgantown%2C+WV!5e0!3m2!1sen!2sus!4v1523205021097" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <button class="primary-button">Cheapest Ride Now!</button>
+      <button class="primary-button">Closest Ride Now!</button>
+      <div class="ride-table">
+        <table>
+          <tr>
+            <td>Uber</td>
+            <td>$8.49</td> 
+            <td>1.2 mi</td>
+            <td>4 min</td>
+            <td><button id="uberButton" class="request-button">Request</button></td>
+          </tr>
+          <tr>
+            <td>Lyft</td>
+            <td>$7.42</td> 
+            <td>2.8 mi</td>
+            <td>12 min</td>
+            <td><button class="request-button">Request</button></td>
+          </tr>
+          <tr>
+            <td>Taxi</td>
+            <td>$5.32</td> 
+            <td>1.0 mi</td>
+            <td>7 min</td>
+            <td><button class="request-button">Request</button></td>
+          </tr>
+        </table>
+      </div>
+      <div class="bottom">
+        <span>Version 0.0.1 | Provide Feedback</span>
+      </div>
+  </div>
+  </body>
+  <script>  
+    var requestButton = document.getElementById("uberButton");
+    requestButton.addEventListener("click", function(event) {
+      window.location.href = '/confirmation-screen';
+    });            
+  </script>
+</html>

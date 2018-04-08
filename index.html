@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  </head>
+  <style>
+    <style>
+      h1 {
+          font-family: "Montserrat", "Times New Roman";
+          font-weight: normal;
+      }
+
+      h3{
+          margin: 0;
+      }
+
+      body{
+          font-family: "Montserrat", "Times New Roman";
+          width: auto;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          margin: 0;
+      }
+
+      a{
+          text-decoration: none;
+      }
+
+      .overview-wrapper{
+          padding-top: 200px;
+          text-align: center;
+          display: block;
+      }
+
+      /* Mobile */
+      @media only screen 
+      and (min-device-width : 320px) 
+      and (max-device-width : 667px)
+      and (orientation : portrait) {
+        h1 {
+          font-size: 200px;
+          margin-bottom: 10px;
+          display: inline-block;
+        }
+
+        body{
+          min-height: 1800px;
+          background-size: cover;
+          background-color: black;
+          color: #FFF59D;
+        }
+
+        .logo {
+          height: 200px;
+          width: auto;
+        }
+
+        .wrapper {
+          border-radius: 2px;
+          box-sizing: border-box;
+        }
+
+        .input {
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid #CCC;
+          box-sizing: border-box;
+          margin-top: 15px;
+          width: 700px;
+          height: 80px;
+          font-size: 40px;
+          outline: none; 
+          color: #FFF59D;
+          font-weight: 200;
+        }  
+
+        &:focus {
+          outline: none;    
+        }
+
+        input::-webkit-input-placeholder {
+          color: #FFF59D;
+        }
+
+        input:focus::-webkit-input-placeholder {
+          color: white;
+        }
+
+        .create-account {
+          padding-right: 187px;
+        }
+
+        .forgot-password {
+          text-align: right;
+        }
+
+        .sub-text {
+          margin-top: 10px;
+          font-size: 30px;
+        }
+
+        .bottom {
+          font-size: 20px;
+          position: absolute;
+          bottom: 10px;
+          left: 350px;
+        }
+      }
+
+  </style>
+  <body>
+  <script type="text/javascript" src="javascripts/index.js"></script>
+  <div class="main-block">
+      <div class="overview-wrapper">
+        <h1>moves</h1>
+        <img class="logo" src="images/move.jpg"/>
+        <div class="wrapper">
+            <input class="input" placeholder="Username" type="text" >
+        </div>
+        <div class="wrapper">
+            <input class="input" id="password" placeholder="Password" type="password" >
+        </div>
+        <div class="sub-text">
+          <span class="create-account">Create Account</span>
+          <span class="forgot-password">Forgot Password?</span>
+        </div>
+      </div>
+      <div class="bottom">
+        <span>Version 0.0.1 | Privacy and Terms</span>
+      </div>
+  </div>
+  </body>
+  <script>   
+    // Get the input field
+    var input = document.getElementById("password");
+    // Execute a function when the user releases a key on the keyboard
+    input.addEventListener("keyup", function(event) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Number 13 is the "Enter" key on the keyboard
+      if (event.keyCode === 13) {
+          window.location.href = '/loading-screen';
+      }
+    });          
+  </script>
+</html>
