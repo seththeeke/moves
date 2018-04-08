@@ -1,3 +1,3 @@
-# My Personal Website
+# Moves
 
-This is also the project where I create issues related to idea for other projects
+Demo of a mobile app idea
